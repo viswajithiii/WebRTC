@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div class="span12 hero-unit" id="homes">
+    <div class = "span6"><h2>What kind of incident do you wish to report?</h2> </div>
+    <br />
+    <div class = "span10"><h4> Your location has been auto-detected to be Chennai, India. You will be directed to appropriate NGOs.</h4></div>
+</div>
+<div class="span12 offset1 row-fluid" id="byname">
+    <ul>
+    {% for ngo in ngos %}
+    <li><h5> <a href="ngo/{{ngo.id}}"> {{ ngo.purpose }}</a> ({{ ngo.name }})</h5> </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
